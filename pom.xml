@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.sketch-shop</groupId>
+    <artifactId>sketch-shop-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>SketchShop Parent</name>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <!--
+            Some default project options.  This takes some boiler plate away
+            from each sub project
+        -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- prevent javadoc errors from failing the build :( -->
+        <additionalparam>-Xdoclint:none</additionalparam>
+    </properties>
+
+    <scm>
+        <connection>scm:git@github.com:sketch-shop/sketch-shop.git</connection>
+        <url>https://github.com/sketch-shop/sketch-shop</url>
+        <developerConnection>scm:git@github.com:sketch-shop/sketch-shop.git</developerConnection>
+    </scm>
+
+    <modules>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.4.2</version>
+                <configuration>
+                    <tagNameFormat>sketch-shop-@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
